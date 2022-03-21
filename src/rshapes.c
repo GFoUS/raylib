@@ -278,7 +278,7 @@ void DrawCircleSector(Vector2 center, float radius, float startAngle, float endA
     {
         // Calculate the maximum angle between segments based on the error rate (usually 0.5f)
         float th = acosf(2*powf(1 - SMOOTH_CIRCLE_ERROR_RATE/radius, 2) - 1);
-        segments = (int)((endAngle - startAngle)*ceilf(2*PI/th)/360);
+        segments = (int)((endAngle - startAngle)*ceilf(2*RAYPI/th)/360);
 
         if (segments <= 0) segments = minSegments;
     }
@@ -370,7 +370,7 @@ void DrawCircleSectorLines(Vector2 center, float radius, float startAngle, float
     {
         // Calculate the maximum angle between segments based on the error rate (usually 0.5f)
         float th = acosf(2*powf(1 - SMOOTH_CIRCLE_ERROR_RATE/radius, 2) - 1);
-        segments = (int)((endAngle - startAngle)*ceilf(2*PI/th)/360);
+        segments = (int)((endAngle - startAngle)*ceilf(2*RAYPI/th)/360);
 
         if (segments <= 0) segments = minSegments;
     }
@@ -516,7 +516,7 @@ void DrawRing(Vector2 center, float innerRadius, float outerRadius, float startA
     {
         // Calculate the maximum angle between segments based on the error rate (usually 0.5f)
         float th = acosf(2*powf(1 - SMOOTH_CIRCLE_ERROR_RATE/outerRadius, 2) - 1);
-        segments = (int)((endAngle - startAngle)*ceilf(2*PI/th)/360);
+        segments = (int)((endAngle - startAngle)*ceilf(2*RAYPI/th)/360);
 
         if (segments <= 0) segments = minSegments;
     }
@@ -610,7 +610,7 @@ void DrawRingLines(Vector2 center, float innerRadius, float outerRadius, float s
     {
         // Calculate the maximum angle between segments based on the error rate (usually 0.5f)
         float th = acosf(2*powf(1 - SMOOTH_CIRCLE_ERROR_RATE/outerRadius, 2) - 1);
-        segments = (int)((endAngle - startAngle)*ceilf(2*PI/th)/360);
+        segments = (int)((endAngle - startAngle)*ceilf(2*RAYPI/th)/360);
 
         if (segments <= 0) segments = minSegments;
     }
@@ -890,7 +890,7 @@ void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color co
     {
         // Calculate the maximum angle between segments based on the error rate (usually 0.5f)
         float th = acosf(2*powf(1 - SMOOTH_CIRCLE_ERROR_RATE/radius, 2) - 1);
-        segments = (int)(ceilf(2*PI/th)/4.0f);
+        segments = (int)(ceilf(2*RAYPI/th)/4.0f);
         if (segments <= 0) segments = 4;
     }
 
@@ -1114,7 +1114,7 @@ void DrawRectangleRoundedLines(Rectangle rec, float roundness, int segments, flo
     {
         // Calculate the maximum angle between segments based on the error rate (usually 0.5f)
         float th = acosf(2*powf(1 - SMOOTH_CIRCLE_ERROR_RATE/radius, 2) - 1);
-        segments = (int)(ceilf(2*PI/th)/2.0f);
+        segments = (int)(ceilf(2*RAYPI/th)/2.0f);
         if (segments <= 0) segments = 4;
     }
 
